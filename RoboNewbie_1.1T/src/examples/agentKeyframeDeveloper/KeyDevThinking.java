@@ -13,7 +13,7 @@ import keyframeMotion.KeyframeMotion;
 /**
  * Thinking class for Agent_KeyframeDeveloper. 
  * Realizes the following behaviour:
- * Sets the keyframe motion to be tested (it has to be saves as 
+ * Sets the keyframe motion to be tested (it has to be saved as 
  * "[RoboNewbie project folder]/keyframes/test.txt" ) and executes it in an
  * infinite loop. If the robot falls down, because the motion is not stable yet,
  * the thinking sets a motion to stand up again. 

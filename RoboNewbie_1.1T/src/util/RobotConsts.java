@@ -12,7 +12,7 @@ import java.util.HashMap;
 /** 
  * This class represents server constants concerning the robot. <br>
  * 
- * Whereever in a RoboNewbie agent are needed constants for effector commands or
+ * Wherever in a RoboNewbie agent are needed constants for effector commands or
  * perceptor values, you can find them here. <br>
  * <br>
  * Especially, here is defined the order of hinge joints, like it is used 
@@ -146,7 +146,7 @@ public class RobotConsts {
     */
     public static final int RightArmYaw = 21;        
     
-   /** Enumaration of body part names used by the vision perceptor. <br> 
+   /** Enumeration of body part names used by the vision perceptor. <br> 
     * Use this for all methods accessing informations about robots sensed by the
     * vision perceptor.
     * @see localFieldView.LocalFieldView#getAllPlayers()

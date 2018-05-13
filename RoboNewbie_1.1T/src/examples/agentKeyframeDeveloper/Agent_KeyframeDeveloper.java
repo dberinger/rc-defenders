@@ -38,7 +38,7 @@ public class Agent_KeyframeDeveloper {
 
     //Attention! When the time to run the programm is set too long, RAM (memory) 
     //can be filled up because of generated log strings. 
-    //1200sec. = 20min. is completely sercure on my computer.     
+    //1200sec. = 20min. is completely secure on my computer.     
     agent.run(1200);
     agent.log.printLog();
     System.out.println("Agent stopped.");
