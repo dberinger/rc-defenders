@@ -56,7 +56,7 @@ public class SimpleGoalie extends Role {
                         robotIsWalking = false;
                     } else {
                         if (ballCoords.getAlpha() > 0) {
-                            motion.setTurnLeftSmall();
+                            motion.setFallLeft();
                         } else {
                             motion.setFallRight();
                         }

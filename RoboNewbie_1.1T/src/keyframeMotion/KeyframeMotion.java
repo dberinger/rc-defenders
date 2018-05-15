@@ -83,6 +83,7 @@ public class KeyframeMotion {
   private static KeyframeSequence FALL_BACK_SEQUENCE;
   private static KeyframeSequence FALL_FORWARD_SEQUENCE;
   private static KeyframeSequence FALL_RIGHT_DB_SEQUENCE; //added by Robotics Condition
+  private static KeyframeSequence FALL_LEFT_DB_SEQUENCE; //added by Robotics Condition
   private static KeyframeSequence STAND_UP_FROM_FRONT_DB_SEQUENCE; //added by Robotics Condition
   private static KeyframeSequence STAND_UP_FROM_BACK_SEQUENCE;
   private static KeyframeSequence ROLL_OVER_TO_BACK_SEQUENCE;
@@ -140,6 +141,7 @@ public class KeyframeMotion {
     FALL_BACK_SEQUENCE = keyframeReader.getSequenceFromFile("nika_fall_back.txt");
     FALL_FORWARD_SEQUENCE = keyframeReader.getSequenceFromFile("fall_forward.txt");
     FALL_RIGHT_DB_SEQUENCE = keyframeReader.getSequenceFromFile("fall_right_DB.txt"); //added by Robotics Condition
+    FALL_LEFT_DB_SEQUENCE = keyframeReader.getSequenceFromFile("fall_left_DB.txt"); //added by Robotics Condition
     STAND_UP_FROM_FRONT_DB_SEQUENCE = keyframeReader.getSequenceFromFile("stand_up_from_front_DB.txt"); //added by Robotics Condition
     STAND_UP_FROM_BACK_SEQUENCE = keyframeReader.getSequenceFromFile("stand_up_from_back.txt");
     ROLL_OVER_TO_BACK_SEQUENCE = keyframeReader.getSequenceFromFile("roll_over_to_back.txt");
@@ -339,6 +341,17 @@ public class KeyframeMotion {
   public void setFallRight() {
     if (loggingOn) log.log("motion fall right \n");
     actualSequence = FALL_RIGHT_DB_SEQUENCE;
+    state = MotionState.BETWEEN_FRAMES;
+  }
+  
+  /**
+   * Set move to let the robot fall down on its left side.
+   * 
+   * Assumed posture before this move: the robot is in an upright position.
+   */
+  public void setFallLeft() {
+    if (loggingOn) log.log("motion fall left \n");
+    actualSequence = FALL_LEFT_DB_SEQUENCE;
     state = MotionState.BETWEEN_FRAMES;
   }
   
