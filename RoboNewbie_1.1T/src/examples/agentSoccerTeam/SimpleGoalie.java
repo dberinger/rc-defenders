@@ -43,7 +43,7 @@ public class SimpleGoalie extends Role {
                 if (percIn.getAcc().getY() > 0) {
                     motion.setStandUpFromBack();
                 } else {
-                    motion.setRollOverToBack();
+                    motion.setStandUpFromFront();
                 }
             } // if the robot has the actual ball coordinates
             else if ((serverTime - ball.getTimeStamp()) < lookTime) {
