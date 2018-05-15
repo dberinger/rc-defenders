@@ -50,16 +50,17 @@ public class SimpleAttacker extends Role {
                     motion.setStandUpFromBack();
                 } else 
                 {
-                    motion.setRollOverToBack();
+                    motion.setStandUpFromFront();
                 }
                 nearForKick = false;
             } // if the robot has the actual ball coordinates
             else if ((serverTime - ball.getTimeStamp()) < lookTime) 
             {
+                //log ball coordinates
                 Vector3D ballCoords = ball.getCoords();
-//              log.log("2. robot has the actual ball coordinates, horizontal angle: " 
-//                + Math.toDegrees(ballCoords.getAlpha()) 
-//                + " distance: " + ballCoords.getNorm()) ;
+              log.log("2. robot has the actual ball coordinates, horizontal angle: " 
+                + Math.toDegrees(ballCoords.getAlpha()) 
+                + " distance: " + ballCoords.getNorm()) ;
 
                 // if the ball is not in front of the robot
                 if (Math.abs(ballCoords.getAlpha()) > TOLLERATED_DEVIATION) 
