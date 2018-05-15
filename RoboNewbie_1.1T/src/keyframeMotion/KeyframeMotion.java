@@ -82,6 +82,7 @@ public class KeyframeMotion {
   private static KeyframeSequence WALK_FORWARD_SEQUENCE;
   private static KeyframeSequence FALL_BACK_SEQUENCE;
   private static KeyframeSequence FALL_FORWARD_SEQUENCE;
+  private static KeyframeSequence STAND_UP_FROM_FRONT_DB_SEQUENCE;//added by Robotics Condition
   private static KeyframeSequence STAND_UP_FROM_BACK_SEQUENCE;
   private static KeyframeSequence ROLL_OVER_TO_BACK_SEQUENCE;
   private static KeyframeSequence STOP_WALKING_SEQUENCE;
@@ -137,6 +138,7 @@ public class KeyframeMotion {
     WALK_FORWARD_SEQUENCE = keyframeReader.getSequenceFromFile("walk_forward-flemming-nika.txt");
     FALL_BACK_SEQUENCE = keyframeReader.getSequenceFromFile("nika_fall_back.txt");
     FALL_FORWARD_SEQUENCE = keyframeReader.getSequenceFromFile("fall_forward.txt");
+    STAND_UP_FROM_FRONT_DB_SEQUENCE = keyframeReader.getSequenceFromFile("stand_up_from_front_DB.txt");//added by Robotics Condition
     STAND_UP_FROM_BACK_SEQUENCE = keyframeReader.getSequenceFromFile("stand_up_from_back.txt");
     ROLL_OVER_TO_BACK_SEQUENCE = keyframeReader.getSequenceFromFile("roll_over_to_back.txt");
     STOP_WALKING_SEQUENCE = keyframeReader.getSequenceFromFile("nika_stop_walking.txt");
@@ -326,7 +328,19 @@ public class KeyframeMotion {
     actualSequence = FALL_FORWARD_SEQUENCE;
     state = MotionState.BETWEEN_FRAMES;
   }
-
+  
+   /**
+   * Set move for standing up, when the robot lies on its face.
+   * 
+   * Assumed posture before this move: the robot lies on its face.
+   * After this move the robot stands on closed parallel feet.
+   */  
+  public void setStandUpFromFront() {
+    if (loggingOn) log.log("motion stand up from front \n");
+    actualSequence = STAND_UP_FROM_FRONT_DB_SEQUENCE;
+    state = MotionState.BETWEEN_FRAMES;
+  }
+  
   /**
    * Set move for standing up, when the robot lies on its back.
    * 

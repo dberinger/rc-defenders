@@ -63,7 +63,7 @@ public class KeyDevThinking {
         if (percIn.getAcc().getY() > 0) {
           state = 2;    // robot lies on the back
         } else {
-          state = 3;                               // robot lies on the front
+          state = 3;   // robot lies on the front
         }
       }
       switch (state) {
@@ -84,7 +84,7 @@ public class KeyDevThinking {
           state = 0;
           break;
         case 3:
-          motion.setRollOverToBack();
+          motion.setTest();
           state = 0;
           break;
       }
