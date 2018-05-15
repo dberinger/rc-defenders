@@ -82,7 +82,8 @@ public class KeyframeMotion {
   private static KeyframeSequence WALK_FORWARD_SEQUENCE;
   private static KeyframeSequence FALL_BACK_SEQUENCE;
   private static KeyframeSequence FALL_FORWARD_SEQUENCE;
-  private static KeyframeSequence STAND_UP_FROM_FRONT_DB_SEQUENCE;//added by Robotics Condition
+  private static KeyframeSequence FALL_RIGHT_DB_SEQUENCE; //added by Robotics Condition
+  private static KeyframeSequence STAND_UP_FROM_FRONT_DB_SEQUENCE; //added by Robotics Condition
   private static KeyframeSequence STAND_UP_FROM_BACK_SEQUENCE;
   private static KeyframeSequence ROLL_OVER_TO_BACK_SEQUENCE;
   private static KeyframeSequence STOP_WALKING_SEQUENCE;
@@ -138,7 +139,8 @@ public class KeyframeMotion {
     WALK_FORWARD_SEQUENCE = keyframeReader.getSequenceFromFile("walk_forward-flemming-nika.txt");
     FALL_BACK_SEQUENCE = keyframeReader.getSequenceFromFile("nika_fall_back.txt");
     FALL_FORWARD_SEQUENCE = keyframeReader.getSequenceFromFile("fall_forward.txt");
-    STAND_UP_FROM_FRONT_DB_SEQUENCE = keyframeReader.getSequenceFromFile("stand_up_from_front_DB.txt");//added by Robotics Condition
+    FALL_RIGHT_DB_SEQUENCE = keyframeReader.getSequenceFromFile("fall_right_DB.txt"); //added by Robotics Condition
+    STAND_UP_FROM_FRONT_DB_SEQUENCE = keyframeReader.getSequenceFromFile("stand_up_from_front_DB.txt"); //added by Robotics Condition
     STAND_UP_FROM_BACK_SEQUENCE = keyframeReader.getSequenceFromFile("stand_up_from_back.txt");
     ROLL_OVER_TO_BACK_SEQUENCE = keyframeReader.getSequenceFromFile("roll_over_to_back.txt");
     STOP_WALKING_SEQUENCE = keyframeReader.getSequenceFromFile("nika_stop_walking.txt");
@@ -326,6 +328,17 @@ public class KeyframeMotion {
   public void setFallForward() {
     if (loggingOn) log.log("motion fall forward \n");
     actualSequence = FALL_FORWARD_SEQUENCE;
+    state = MotionState.BETWEEN_FRAMES;
+  }
+  
+   /**
+   * Set move to let the robot fall down on its right side.
+   * 
+   * Assumed posture before this move: the robot is in an upright position.
+   */
+  public void setFallRight() {
+    if (loggingOn) log.log("motion fall right \n");
+    actualSequence = FALL_RIGHT_DB_SEQUENCE;
     state = MotionState.BETWEEN_FRAMES;
   }
   

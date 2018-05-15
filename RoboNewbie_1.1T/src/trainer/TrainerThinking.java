@@ -37,7 +37,7 @@ public class TrainerThinking {
     private TrainerCommandExecutor trainer;
     
     private  int experimentNumber = 0;    // for counting experiments
-    // you can srop experimenting after reaching a maximal number.
+    // you can stop experimenting after reaching a maximal number.
     private double serverTime, startExpTime; // for counting elapsed time 
     private double maxExpTime = 20; // time in seconds to run an experiment  
 
@@ -84,8 +84,8 @@ public class TrainerThinking {
                 /*
                  * there are different experiments, choose one of them
                  */
-                startExperiment1();      // with attacker
-                // startExperiment2();        // with goalkeeper
+                //startExperiment1();      // with attacker
+                  startExperiment2();        // with goalkeeper
                 expState = ExperimentState.RUNNING;
                 break;
             }

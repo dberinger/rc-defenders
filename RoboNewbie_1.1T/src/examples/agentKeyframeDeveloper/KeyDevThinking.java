@@ -84,7 +84,7 @@ public class KeyDevThinking {
           state = 0;
           break;
         case 3:
-          motion.setTest();
+          motion.setStandUpFromFront();
           state = 0;
           break;
       }
