@@ -58,7 +58,7 @@ public class SimpleGoalie extends Role {
                         if (ballCoords.getAlpha() > 0) {
                             motion.setTurnLeftSmall();
                         } else {
-                            motion.setTurnRightSmall();
+                            motion.setFallRight();
                         }
                     }
                 } // if the ball is close to the robot
